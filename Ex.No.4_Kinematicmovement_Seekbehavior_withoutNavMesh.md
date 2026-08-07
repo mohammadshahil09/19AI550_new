@@ -1,6 +1,6 @@
 # Ex.No: 4  Implementation of Kinematic movement -seek and Flee behavior in Unity
-### DATE:                                                                            
-### REGISTER NUMBER : 
+### DATE: 7.08.2026                                                                            
+### REGISTER NUMBER : 212224240184
 ### AIM: 
 To write a program to simulate the process of seek and Flee behavior in Unity without NavigationMeshAgent. 
 ### Algorithm:
@@ -29,61 +29,38 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class seekScript : MonoBehaviour
+public class Seek : MonoBehaviour
 {
     // Start is called before the first frame update
-    public Transform target;  // The object to seek
-    public float speed = 5f;  // Movement speed
+    public Transform target;
+    public Transform f;
+    public Transform s;
+    public float speed=5f;
     void Start()
     {
-        
+        print("welcome");
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (target == null) return;  // Exit if no target is assigned
-
-        // Calculate the desired direction
-        Vector3 direction = (target.position - transform.position).normalized;
-
-        // Move the object towards the target
-        transform.position += direction * speed * Time.deltaTime;
-    }
-}
-```
-```
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class fleeScript : MonoBehaviour
-{
-    // Start is called before the first frame update
-    public Transform target;  // The object to seek
-    public float speed = 5f;  // Movement speed
-    void Start()
-    {
-        
+       // seek script
+       Vector3 dir=(target.position - s.position).normalized;
+       s.position += dir * speed * Time.deltaTime;
+       // flee script
+       Vector3 dir2=(target.position - f.position).normalized;
+       f.position += dir2 * speed * Time.deltaTime;
+        }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (target == null) return;  // Exit if no target is assigned
 
-        // Calculate the desired direction
-        Vector3 direction = (transform.position-target.position).normalized;
-
-        // Move the object towards the target
-        transform.position += direction * speed * Time.deltaTime;
-    }
-}
 ```
 ### Output:
 
+<img width="1917" height="1137" alt="image" src="https://github.com/user-attachments/assets/a14d37a3-5366-4ab1-9756-8bac856eb94d" />
 
 
+<img width="1917" height="1138" alt="image" src="https://github.com/user-attachments/assets/a86c718e-f4e7-4a86-88cb-6b7793fdfe51" />
 
 
 
