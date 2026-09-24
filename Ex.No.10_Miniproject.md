@@ -1,6 +1,6 @@
 # Ex.No: 10  Implementation of Jumping game
-### Name : mohammad shahil
-### REGISTER NUMBER : 21222340044
+### Name : mohammad
+### REGISTER NUMBER : 21223240044
 ### AIM: 
 To develop a game on control player movement and jump in 2D using Rigidbody2D.
 ### Algorithm:
